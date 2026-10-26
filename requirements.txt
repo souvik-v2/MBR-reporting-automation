@@ -1,0 +1,12 @@
+pandas>=2.0
+openpyxl>=3.1
+python-pptx>=0.6.21
+Pillow>=10.0
+Flask>=3.0
+
+# System dependency (not a pip package) required only for the MBR pipeline's
+# .odp -> .pptx conversion (odp_converter.py): LibreOffice, providing the
+# 'soffice' binary. Not needed if no team submits a .odp deck.
+#   Linux:   sudo apt install libreoffice
+#   macOS:   brew install --cask libreoffice
+#   Windows: download from https://www.libreoffice.org/download/
