@@ -1,0 +1,44 @@
+1. Open the project
+
+Extract excel_pptx_merger_FIXED_Chatbot.zip somewhere (e.g. C:\Users\<you>\Desktop\excel_pptx_merger)
+Open VS Code → File → Open Folder → select that extracted folder
+
+2. Install Python (if not already)
+
+Check: open VS Code terminal (Ctrl+`) and run:
+
+python --version
+
+If missing, install from python.org (3.10+), check "Add to PATH" during install
+
+3. Install the VS Code Python extension
+
+Extensions tab (Ctrl+Shift+X) → search "Python" (by Microsoft) → Install
+
+4. Create a virtual environment (recommended, keeps things clean)
+
+In the VS Code terminal:
+python -m venv venv
+venv\Scripts\activate
+You should see (venv) appear in the terminal prompt. VS Code may also prompt "Select Interpreter" — pick the venv one.
+5. Install dependencies
+pip install -r requirements.txt
+6. Install LibreOffice (needed for the WPM .odp file and PDF export)
+
+Download from libreoffice.org/download, run the installer, accept defaults
+
+7. Run the PPT/Excel/dashboard generator
+python run_all.py
+
+Check the output folder (left sidebar) — you should see the .pptx, .xlsx, .html, and .pdf files appear.
+8. Run the chatbot
+python chatbot_app.py
+Terminal will show Running on http://127.0.0.1:5000. Open that link in your browser (Ctrl+click it in the VS Code terminal, or paste into Chrome/Edge). Type a question like "Who is the LT Manager for SEOD?" and hit enter.
+To stop the chatbot server: click in the terminal, press Ctrl+C.
+9. Test "regenerate on change"
+
+Open any file under sample_data\Graph\ or sample_data\ppt-data\ in VS Code, change something, save
+Re-run python run_all.py
+Open the new file in output and confirm your change shows up
+
+That's the whole loop — edit sample_data, re-run the script, check output.
